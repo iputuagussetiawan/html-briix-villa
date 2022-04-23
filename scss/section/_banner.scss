@@ -1,0 +1,90 @@
+@use '../config/_variable.scss' as *;
+@use '../config/_mixin.scss' as *;
+
+@use '../components/_scroll-to-botom.scss' as *;
+
+.banner{
+    position: relative;
+    background-color: $primary;
+    .container{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    &__inner{
+        text-align: center;
+    }
+
+    &__image-container{
+        background-color: $black;
+        overflow: hidden;
+        height: 100vh;
+        width: 100%;
+        min-height: 650px;
+        //opacity: 0;
+        img{
+           opacity: 0.7;
+           width: 100%;
+           height: 100%;
+           object-fit: cover;
+        }
+    }
+
+    &__info-container{
+        position: relative;
+        z-index: 3;
+        text-align: center;
+    }
+
+    &__title{
+        margin-bottom: 70px;
+        font-size: 48px;
+        font-family: $primary-font;
+        font-weight: 700;
+        line-height: 60px;
+        color: $white;
+        opacity: 0;
+    }
+
+    &__btn-discover{
+        opacity: 0;
+        margin-top: 24px;
+        margin-bottom: 24px;
+    }
+
+   
+
+    @media only screen and (max-width: 1199.98px) {
+        &__title{
+            margin-bottom: 42px;
+            line-height: 50px;
+        }
+    }
+
+    @media only screen and (max-width: 991.98px) {
+        &__title{
+            font-size: 42px;
+            margin-bottom: 37px;
+        }
+    }
+
+    @media only screen and (max-width: 767.98px) {
+        &__title{
+            font-size: 37px;
+            line-height: 42px;
+            margin-bottom: 32px;
+        }
+
+        &__image-container{
+            min-height: 450px;
+        }
+    }
+
+    @media only screen and (max-width: 575.98px) {
+        &__title{
+            font-size: 32px;
+        }
+    
+    }
+}

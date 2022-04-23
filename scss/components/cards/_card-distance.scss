@@ -1,0 +1,66 @@
+@use '../../config/_mixin.scss' as *;
+@use '../../config/_variable.scss' as *;
+
+.distance-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px 30px ;
+    margin-top: 46px;
+
+    @media only screen and (max-width: 1440px) {
+        gap: 42px 16px;
+    }
+
+    @media only screen and (max-width: 991.98px) {
+        margin-top: 42px;
+    }
+
+    @media only screen and (max-width: 767.98px) {
+        margin-top: 32px;
+    }
+
+    @media only screen and (max-width: 575.98px) {
+        margin-top: 24px;
+    }
+}
+
+.card-distance{
+    @include imageRatio(38,38,true,contain,'icon');
+
+    &__icon-container{
+        margin-bottom: 16px;
+    }
+    &__title{
+        margin-bottom: 10px;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 25px;
+        color: $gray-200;
+    }
+
+    &__subtitle{
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 18px;
+        color: $gray-200;
+    }
+
+    @media only screen and (max-width: 575.98px) {
+        @include imageRatio(32,32,true,contain,'icon');
+
+        &__icon-container{
+            margin-bottom: 14px;
+        }
+        &__title{
+            font-size: 17px;
+            line-height: 20px;
+        }
+
+        &__subtitle{
+            line-height: 16px;
+        }
+    }
+    
+}

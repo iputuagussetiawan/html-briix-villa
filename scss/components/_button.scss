@@ -1,0 +1,140 @@
+@use "../config/_mixin.scss" as *;
+@use "../config/_variable.scss" as *;
+@use "../base/_animation.scss" as *;
+
+.btn{
+    padding: 15px 25px;
+    border-radius: 0px;
+    font-size: 18px;
+    font-weight: 400;
+    img{
+        height: 15px;
+        margin-right: 10px;
+    }
+
+    @media only screen and (max-width: 767.98px) {
+        padding: 14px 21px;
+    }
+
+    @media only screen and (max-width: 575.98px) {
+        font-size: 16px;
+    }
+
+    @media only screen and (max-width: 480px) {
+        padding: 12px 18px;
+    }
+}
+
+.btn-outline-primary{
+    display: inline-block;
+    border: 1px solid $blue-150;
+    border-radius: 0px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    color: $blue-150;
+    transition: 0.4s ease;
+
+    &:hover{
+        color: $white;
+        background-color:#35ABDF ;
+
+        img{
+            filter: brightness(0) saturate(100%) invert(96%) sepia(4%) saturate(69%) hue-rotate(200deg) brightness(118%) contrast(100%);
+        }
+    }
+
+}
+
+.btn-outline-secondary{
+    display: inline-block;
+    border: 1px solid $white;
+    border-radius: 0px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    color: $white;
+    transition: 0.4s ease;
+    &:hover{
+        background-color: $white;
+        color: $black;
+    }
+
+   
+}
+
+.btn-primary{
+    display: inline-block;
+    border: 1px solid $blue-150;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    color: $white;
+    transition: 0.4s ease;
+    background-color:$blue-150 ;
+    &:hover{
+        background-color: #35abdf;
+        border-color: #35abdf;
+    }
+}
+
+
+.video-play-button {
+	position: absolute;
+	z-index: 10;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	box-sizing: content-box;
+	display: block;
+	width: 44px;
+	height: 44px;
+	border-radius: 50%;
+	text-decoration: none;
+	color: $white;
+	font-size: 34px;
+
+    span,img {
+		position: absolute;
+        top: -4px;
+        left: 8px;
+        width: 44px;
+        height: 52px;
+        z-index: 3;
+	}
+
+	&::before {
+		content: "";
+		position: absolute;
+		display: block;
+		width: 80px;
+		height: 80px;
+		left: 50%;
+		top: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		background: $white;
+		border-radius: 50%;
+		z-index: 0;
+		animation: pulse-border 2500ms ease-out infinite;
+      
+	}
+
+    &:hover {
+		color: $white;
+	}
+
+	
+    @media only screen and (max-width: 767.98px) {
+        img {
+            top: 1px;
+            left: 11px;
+            width: 37px;
+            height: 42px;
+        }
+
+        &::before {
+            width: 50px;
+            height: 50px;
+        }
+       
+    }
+}

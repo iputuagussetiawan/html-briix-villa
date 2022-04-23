@@ -1,0 +1,62 @@
+@use '../config/_variable.scss' as *;
+@use '../config/_mixin.scss' as *;
+@use '../plugin/_flickity.min.scss' as *;
+.gallery{
+    position: relative;
+    overflow: hidden;
+    @include imageRatio(1010,760,true);
+
+    &__btn{
+        position: absolute !important;
+        bottom: 0px !important;
+        left: 0 !important;
+        z-index: 3;
+    }
+}
+
+.carousel-cell {
+    width: 50%;
+    height: 750px;
+
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    //@include imageRatio(1010,760,true);
+
+    @media only screen and (max-width: 1199.98px) {
+        width: 60%;
+        height: 500px;
+    }
+
+    @media only screen and (max-width: 991.98px) {
+        width: 65%;
+        height: 450px;
+    }
+
+    @media only screen and (max-width: 767.98px) {
+        width: 75%;
+        height: 450px;
+    }
+    @media only screen and (max-width: 575.98px) {
+        width: 100%;
+        height: 400px;
+    }
+}
+  
+//   /* cell number */
+//   .carousel-cell:before {
+//     display: block;
+//     text-align: center;
+//     content: counter(carousel-cell);
+//     line-height: 200px;
+//     font-size: 80px;
+//     color: white;
+//   }
+
+// .gallery-list{
+//     display: grid;
+//     // grid-template-columns:minmax(1010) ;
+    
+// }

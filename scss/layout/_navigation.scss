@@ -1,0 +1,53 @@
+@use "../_config.scss" as *;
+@use "../config/_variable.scss" as *;
+
+.navbar-custom {
+	width: 100%;
+	padding: 0px;
+	transition: 0.4s ease;
+	background-color:transparent;
+
+	&.scroll-header{
+		top: -180px;
+	}
+
+	.navbar-toggler:focus {
+		box-shadow: none;
+	}
+
+	.navbar-toggler{
+		padding: 0px;
+		border: none;
+	}
+
+}
+
+.navbar-brand {
+	@include imageRatio(130,130, true, cover, "logo");
+
+	display: inline-block;
+	position: relative;
+	padding: 0px 0px;
+
+	&__logo-container{
+		width: 130px;
+		height: 130px;
+	}
+
+	@media only screen and (max-width: 1440px) {
+		@include imageRatio(150,150, true, cover, "logo");
+		&__logo-container{
+			width: 150px;
+			height: 150px;
+		}
+	}
+
+	@media only screen and (max-width: 767.98px) {
+		@include imageRatio(100,100, true, cover, "logo");
+		&__logo-container{
+			width: 100px;
+			height: 110px;
+		}
+	}
+}
+

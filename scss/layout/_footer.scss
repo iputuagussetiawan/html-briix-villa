@@ -1,0 +1,181 @@
+@use "../config/_variable.scss" as *;
+@use "../config/_mixin.scss" as *;
+@use "../components/_social-icons.scss";
+/*-----------------------------------------
+////////////////// FOOTER /////////////////
+-----------------------------------------*/
+.footer {
+	@include imageRatio(100, 49.28, true, cover, "logo");
+	@include imageRatio(151.75, 49.73, true, contain, "appstorelogo");
+	@include imageRatio(165, 49.02, true, contain, "googleplaylogo");
+	
+	position: relative;
+	background-color: $secondary;
+
+	a{
+		color: $white;
+		text-decoration: none;
+		transition: 0.4s ease;
+
+		&:hover{
+			color: #35abdf;
+		}
+	}
+
+	&::before{
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom:calc(100% - 2px);
+        left: 0px;
+        height: 160px;
+        background-image: url('https://preview.timedoor-host.my.id/briix-lp/images/background/bg-top.svg');
+        background-size: cover;
+    }
+
+	&__logo-container{
+		margin-bottom: 50px;
+	}
+
+	&__info-container{
+		margin-bottom: 30px;
+		color: $white;
+		p{
+			font-weight: 300;
+			font-size: 20px;
+			line-height: 35px;
+		}
+	}
+
+	&__appstore-label{
+		display: inline-block;
+		margin-right: 59.2px;
+		color: $white;
+		font-family: $primary-font;
+		font-style: normal;
+		font-weight: 400;
+		font-size: 24px;
+		line-height: 27.62px;
+	}
+
+	&__appstorelogo-container,
+	&__googleplaylogo-container{
+		vertical-align: middle;
+	}
+
+	&__appstorelogo-container{
+		margin-right: 32px;
+	}
+
+	&__copyright{
+		margin-top: 40px;
+		padding:15px;
+		background-color: $blue-200;
+		color: $white;
+		text-align: center;
+		p{
+			margin: 0px;
+			font-family: $primary-font;
+			font-style: normal;
+			font-weight: 500;
+			font-size: 18px;
+			line-height: 20px;
+			letter-spacing: 0.4px;
+		}
+	}
+
+	@media only screen and (max-width: 1440px) {
+		&__logo-container,
+		&__info-container,
+		&__appstore-container{
+			margin-bottom: 42px;
+		}
+
+		&__appstore-label{
+			margin-right: 37px;
+		}
+
+		&__appstorelogo-container{
+			margin-right: 16px;
+			&:last-child{
+				margin-right: 0px;
+			}
+		}
+	}
+
+	@media only screen and (max-width: 1199.98px) {
+		&__info-container{
+			p{
+				font-size: 17px;	
+			}
+		}
+
+		
+
+		&__appstore-label{
+			display: block;
+			margin-right: 0px;
+		}
+		&__appstore-label{
+			margin-bottom: 16px;
+		}
+	}
+
+	@media only screen and (max-width: 991.98px) {
+		&__logo-container,
+		&__info-container,
+		&__appstore-container{
+			margin-bottom: 37px;
+		}
+		
+		&__copyright{
+			padding: 24px 15px 24px 15px;	
+			p{
+				font-size: 16px;	
+			}		
+		}	
+
+		&__appstorelogo-container{
+			margin-right: 24px;
+		}
+	}
+
+	@media only screen and (max-width: 767.98px) {
+		@include imageRatio(80, 39.42, true, cover, "logo");
+		&__copyright{
+			padding: 16px 15px 16px 15px;	
+			p{
+				font-size: 14px;	
+			}		
+		}
+		&__info-container{
+			p{
+				font-size: 16px;
+				line-height: 27px;	
+			}
+		}
+		&__logo-container,
+		&__info-container,
+		&__appstore-container{
+			margin-bottom: 32px;
+		}
+
+		// &__appstorelogo-container{
+		// 	img{
+		// 		width: 130px;
+		// 	}
+		// }
+	}
+
+	@media only screen and (max-width: 480px) {
+		&__appstorelogo-container,
+		&__googleplaylogo-container{
+			margin-bottom: 16px;
+		}
+	}
+	
+}
+
+/*-----------------------------------------
+//////////////////////////////// FOOTER END
+-----------------------------------------*/

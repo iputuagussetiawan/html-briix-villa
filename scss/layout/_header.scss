@@ -1,0 +1,8 @@
+header{
+    position: relative;
+    top: 0;
+    transition: 0.4s ease;
+    &.scroll-header{
+        top: -10px;
+    }
+}

@@ -1,0 +1,33 @@
+@use "../config/_mixin.scss" as *;
+@use "../config/_variable.scss" as *;
+
+.scroll-to-botom{
+    display: inline-block;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    padding: 16px 24px;
+    transform: translateX(-50%);
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+    line-height: 23.02px;
+    text-transform: uppercase;
+    color: $white;
+    opacity: 0;
+    letter-spacing: 0.18;
+
+    &__icon{
+        margin-top: 19px;
+        display: block;
+    }
+
+    @media only screen and (max-width: 575.98px) {
+        padding: 0px;
+
+        &__icon{
+            margin-top: 8px;
+        }
+    }
+}
+

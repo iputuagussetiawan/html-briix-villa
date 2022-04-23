@@ -1,0 +1,132 @@
+@use '../config/_variable.scss' as *;
+@use '../config/_mixin.scss' as *;
+@use '../components/cards/_card-distance.scss';
+
+.location{
+    position: relative;
+    
+    .btn-primary{
+        position: absolute;
+        bottom: 5px;
+        left: 0;
+    }
+
+    &::before{
+        content: '';
+        position: absolute;
+        top :0;
+        right: 30%;
+        bottom: 0;
+        left: 0;
+        background: rgba(200, 234, 250, 0.5);
+        z-index: -1;
+    }
+    
+
+    &__title{
+        margin-bottom: 30px;
+        font-weight: 700;
+        font-size: 42px;
+        line-height: 55px;
+        color: $blue-500;
+    }
+
+    &__description{
+        font-style: normal;
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 35px;
+        color: $gray-200;
+    }
+
+    &__map{
+        position: relative;
+        margin-left: 160px;
+
+        iframe{
+            width: 100%;
+        }
+    }
+
+    @media only screen and (max-width: 1440px) {
+        &__map{
+            margin-left: 60px;
+        }
+    }
+
+    @media only screen and (max-width: 1199.98px) {
+        &::before{
+            right: 0;
+        }
+        &__title{
+            font-size: 40px;
+        }
+        &__map{
+            margin-top: 46px;
+            margin-left: 0px;
+        }
+    }
+
+    @media only screen and (max-width: 991.98px) {
+        &__title{
+            font-size: 34px;
+            line-height: 47px;
+            margin-bottom: 30px;
+        }
+
+        &__description{
+            font-size: 18px;
+        }
+
+        &__map{
+            margin-top: 42px;
+        }
+    }
+
+    @media only screen and (max-width: 767.98px) {
+        &__title{
+            margin-bottom: 24px;
+            font-size: 28px;
+            line-height: 37px;
+        }
+
+        &__map{
+            margin-top: 32px;
+        }
+       
+    }
+
+    @media only screen and (max-width: 575.98px) {
+        &__title{
+            margin-bottom: 24px;
+            font-size: 24px;
+        }
+
+        &__description{
+            font-size: 16px;
+            line-height: 27px;
+        }
+        &__map{
+            margin-top: 24px;
+        }
+     
+    }
+
+    @media only screen and (max-width: 480px) {
+        &__title{
+            font-size: 20px;
+        }
+
+        .btn-primary{
+            bottom: -39px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        &__map{
+            margin-bottom: 39px;
+        }
+
+    }
+}

@@ -1,0 +1,96 @@
+@use "sass:math";
+@use "_config.scss" as *;
+
+//font
+@font-face {
+	font-family: 'Grold';
+	src: url('https://preview.timedoor-host.my.id/briix-villa-lp/fonts/Grold-Regular.otf');
+	src: url('https://preview.timedoor-host.my.id/briix-villa-lp/fonts/Grold-Light.otf'), 
+		 url('https://preview.timedoor-host.my.id/briix-villa-lp/fonts/Grold-Medium.otf'), 
+		 url('https://preview.timedoor-host.my.id/briix-villa-lp/fonts/Grold-Bold.otf'), 
+		 url('https://preview.timedoor-host.my.id/briix-villa-lp/fonts/Grold-Black.otf'); 
+		 font-display: swap;
+	}
+
+// Configuration
+@import "plugin/bootstrap-5.0.2/scss/functions";
+@import "plugin/bootstrap-5.0.2/scss/variables";
+@import "plugin/bootstrap-5.0.2/scss/mixins";
+@import "plugin/bootstrap-5.0.2/scss/utilities";
+
+// Layout & components
+@import "plugin/bootstrap-5.0.2/scss/containers";
+@import "plugin/bootstrap-5.0.2/scss/grid";
+@import "plugin/bootstrap-5.0.2/scss/transitions";
+@import "plugin/bootstrap-5.0.2/scss/nav";
+@import "plugin/bootstrap-5.0.2/scss/navbar";
+@import "plugin/bootstrap-5.0.2/scss/images";
+
+
+// Helpers
+@import "plugin/bootstrap-5.0.2/scss/helpers";
+
+// Utilities
+@import "plugin/bootstrap-5.0.2/scss/utilities/api";
+// scss-docs-end import-stack
+@import "plugin/_aos.scss";
+@import "base/_reset.scss";
+@import "layout/_navigation.scss";
+// @import "layout/_main.scss";
+@import "layout/_footer.scss";
+@import "layout/_section.scss";
+@import "components/_button.scss";
+@import "components/_burgermenu.scss";
+@import "components/_preloader.scss";
+@import "components/_scroll-to-top.scss";
+
+
+@media (min-width: 768px){
+	.container-md, 
+	.container-sm, 
+	.container {
+		max-width: 640px;
+	}
+}
+
+@media (min-width: 992px){
+	.container-lg, 
+	.container-md, 
+	.container-sm, 
+	.container {
+		max-width: 860px;
+	}
+}
+
+@media (min-width: 1200px){
+	.container-xl, 
+	.container-lg, 
+	.container-md, 
+	.container-sm, 
+	.container {
+		max-width: 1080px;
+	}
+}
+
+
+@media (min-width: 1400px) {
+	.container,
+	.container-lg,
+	.container-md,
+	.container-sm,
+	.container-xl,
+	.container-xxl {
+		max-width: 85%;
+	}
+}
+
+.page-wrapper {
+	position: relative;
+	overflow-x: hidden;
+}
+
+.img-fluid{
+	max-width: 100%;
+}
+
+

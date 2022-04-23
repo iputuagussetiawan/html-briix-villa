@@ -1,0 +1,60 @@
+@use "../config/_mixin.scss" as *;
+@use "../config/_variable.scss" as *;
+
+/*-----------------------------------------
+//////////////// SCROOLTOP ////////////////
+-----------------------------------------*/
+.scrolltop {
+	position: fixed;
+	right: 30px;
+	bottom: -20%;
+    width: 64px;
+    height: 64px;
+	padding: 10px;
+	border-radius: 0px;
+	background: $blue-200;
+	border: 1px solid $blue-200;
+    text-align: center;
+	z-index: 10;
+	transition: 0.4s;
+	visibility: hidden;
+    text-decoration: none;
+
+    svg{
+        margin-top: 10px;
+    }
+
+	.scrolltotop__icon {
+		font-size: 20px;
+		color: #fff;
+	}
+
+	&.show-scroll {
+		visibility: visible;
+		bottom: 64px;
+	}
+	&.fixed {
+		bottom: 80px;
+	}
+
+	&:hover {
+		text-decoration: none;
+		opacity: 1;
+		background-color: #35abdf;
+		border-color:#35abdf ;
+	
+	}
+
+	@media only screen and (max-width: 767.98px) {
+		right: 16px;
+		width: 46px;
+		height: 46px;
+
+		svg{
+			margin-top: 2px;
+		}
+	}
+}
+/*-----------------------------------------
+///////////////////////////// SCROOLTOP END
+-----------------------------------------*/

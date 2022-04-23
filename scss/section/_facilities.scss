@@ -1,0 +1,141 @@
+@use '../config/_variable.scss' as *;
+@use '../config/_mixin.scss' as *;
+
+.facilities{
+    @include imageRatio(750,800,true);
+    position: relative;
+    &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 70%;
+        background: rgba(200, 234, 250, 0.5);
+        z-index: -1;
+    }
+    &__title{
+        margin-bottom: 30px;
+        font-weight: 700;
+        font-size: 42px;
+        line-height: 55px;
+        color: $blue-500;
+    }
+
+    &__info-container{
+        p{
+            margin-bottom: 24px;
+            font-weight: 300;
+            font-size: 20px;
+            line-height: 35px;
+            color: $gray-200;
+        };
+    }
+
+    &__slider-container{
+        padding-left: 160px;
+    }
+
+    &__list{
+        padding-left: 24px;
+        list-style: none;
+       
+    }
+
+    &__item{
+        position: relative;
+        padding-left: 24px;
+        font-size: 20px;
+        line-height: 35px;
+        color: $gray-200;
+
+        &::before{
+            content: '';
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background-color: $gray-200;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+          
+        }
+    }
+
+    @media only screen and (max-width: 1440px) {
+        &__slider-container{
+            padding-left: 100px;
+        }
+    }
+
+    @media only screen and (max-width: 1199.98px) {
+        &__slider-container{
+            padding-left: 0px;
+            margin-top: 42px;
+            text-align: center;
+        }
+        &__title{
+            margin-bottom: 30px;
+            font-size: 40px;
+        }
+        &__info-container{
+            p{
+                margin-bottom: 22px;
+                font-size: 18px;
+                line-height: 27px;
+            };
+        }
+
+        &__item{
+            font-size: 18px;
+            line-height: 27px;
+        }
+    
+    }
+
+    @media only screen and (max-width: 991.98px) {
+        &__title{
+            margin-bottom: 30px;
+            font-size: 34px;
+        }
+        &__slider-container{
+            margin-top: 42px;
+        }
+    }
+
+    @media only screen and (max-width: 767.98px) {
+        &::before{
+            left: 0;
+        }
+        &__title{
+            margin-bottom: 24px;
+            font-size: 28px;
+        }
+
+        &__info-container{
+            p{
+                margin-bottom: 20px;
+                font-size: 16px;
+                line-height: 24px;
+            };
+        }
+        &__item{
+            font-size: 16px;
+            line-height: 24px;
+        }
+        &__slider-container{
+            margin-top: 32px;
+        }
+    }
+
+    @media only screen and (max-width: 575.98px) {
+        &__title{
+            font-size: 24px;
+        }
+
+        &__slider-container{
+            margin-top: 24px;
+        }
+    }
+}

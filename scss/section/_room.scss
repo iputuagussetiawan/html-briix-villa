@@ -1,0 +1,49 @@
+@use '../config/_variable.scss' as *;
+@use '../config/_mixin.scss' as *;
+@use '../components/cards/_card-room.scss';
+
+.room{
+    &__title{
+        margin-bottom: 80px;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 42px;
+        line-height: 55px;
+        text-align: center;
+        color: $blue-500;
+    }
+
+    @media only screen and (max-width: 1199.98px) {
+        &__title{
+            margin-bottom: 30px;
+            font-size: 40px;
+        }
+    }
+
+    @media only screen and (max-width: 991.98px) {
+        &__title{
+            margin-bottom: 30px;
+            font-size: 34px;
+            line-height: 47px;
+        }
+    
+    }
+
+    @media only screen and (max-width: 767.98px) {
+        &__title{
+            margin-bottom: 24px;
+            font-size: 28px;
+            line-height: 37px;
+        }
+    }
+
+    @media only screen and (max-width: 575.98px) {
+        &__title{
+            margin-bottom: 24px;
+            font-size: 24px;
+            line-height: 37px;
+        }
+    }
+
+    
+}

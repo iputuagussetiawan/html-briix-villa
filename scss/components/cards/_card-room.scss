@@ -1,0 +1,310 @@
+@use '../../config/_mixin.scss' as *;
+@use '../../config/_variable.scss' as *;
+
+.room-list{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap:120px ;
+
+    @media only screen and (max-width: 1440px) {
+        gap:100px ;
+
+    }
+
+    @media only screen and (max-width: 1199.98px) {
+        gap:80px ;
+    }
+
+    @media only screen and (max-width: 991.98px) {
+        gap:64px ;
+    }
+
+    @media only screen and (max-width: 767.98px) {
+        gap:42px ;
+    }
+}
+
+.card-room{
+    @include imageRatio(750, 540, false, cover);
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    &__info-container{
+        width: 50%;
+        padding-left: 160px
+    }
+
+    &__image-wrapper{
+        position: relative;
+        width: 50%;
+    }
+
+    &__image-container{
+        position: relative;
+        //width: 50%;
+    }
+
+    &__title{
+        font-size: 36px;
+        font-weight: 400;
+        margin-bottom: 30px;
+        line-height: 41px;
+        text-transform: capitalize;
+        color: $blue-150;
+    }
+
+    &__description{
+        font-style: normal;
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 35px;
+        color: $gray-200;
+    }
+
+    &__btn-wrapper{
+        margin-top: 30px;
+        .btn:first-child{
+            margin-right: 32px;
+        } 
+    }
+
+    &__amenities{
+        font-style: normal;
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 35px;
+        color:  $gray-200;
+    }
+
+    &__amenities-list{
+        padding-left: 16px;
+        list-style: none;
+       
+    }
+
+    &__amenities-item{
+        position: relative;
+        padding-left: 16px;
+        font-size: 20px;
+        line-height: 35px;
+        color: $gray-200;
+
+        &::before{
+            content: '';
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background-color: $gray-200;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+          
+        }
+    }
+
+    &__status{
+        position: absolute;
+        top: 40px;
+        right: 40px;
+        width:97px;
+        height: 35px;
+        font-size: 16px;
+        text-transform: uppercase;
+        background-color: $gray-200;
+        padding: 10px 28.5px;
+        z-index: 3;
+
+        &--sold{
+            @extend .card-room__status;
+            background-color: #EB5757;
+            color: $white;
+        }
+    }
+
+    &--sold{
+        @extend .card-room;
+        .card-room__image-container{
+            background-color: $black;
+
+            img{
+                opacity: 0.7;
+            }
+        }
+
+    }
+
+    @media only screen and (max-width: 1600px) {
+        &__info-container {
+            padding-left: 64px;
+        }
+    }
+
+    @media only screen and (max-width: 1440px) {
+        &__info-container {
+           
+            width: 55%;
+        }
+
+        &__image-wrapper{
+            width: 45%;
+        }
+
+        &__btn-wrapper{
+            .btn:first-child{
+                margin-right: 24px;
+                margin-bottom: 16px;
+            } 
+        }
+    }
+
+
+    @media only screen and (max-width: 1199.98px) {
+        .btn{
+            margin-bottom: 0px;
+        }
+        &__image-wrapper{
+            width: 100%;
+            order: 0;
+           
+        }
+        &__info-container{
+            margin-top: 42px;
+            width: 100%;
+            order: 1;
+            padding-left: 0px;
+        }
+        &__title{
+            font-size: 32px;
+            font-weight: 400;
+            margin-bottom: 27px;
+            line-height: 37px;
+        }
+        &__description,
+        &__amenities,
+        &__amenities-item{
+            font-size: 19px;
+            line-height: 27px;
+        }
+
+        &__amenities-list{
+            padding-left: 0px;
+            list-style: none;
+           
+        }
+
+        &__status{
+            top: 32px;
+            right: 32px;
+        }
+       
+    }
+
+    @media only screen and (max-width: 991.98px) {
+        &__title{
+            font-size: 27px;
+            margin-bottom: 20px;
+            line-height: 27px;
+        }
+        &__status{
+            top: 24px;
+            right: 24px;
+        }
+        &__description,
+        &__amenities,
+        &__amenities-item{
+            font-size: 18px;
+            line-height: 27px;
+        }
+    }
+
+    @media only screen and (max-width: 767.98px) {
+        &__title{
+            font-size: 24px;
+            margin-bottom: 16px;
+            line-height: 24px;
+        }
+        &__description,
+        &__amenities,
+        &__amenities-item{
+            font-size: 16px;
+            line-height: 24px;
+        }
+        &__status{
+            top: 16px;
+            right: 16px;
+        }
+    } 
+
+    @media only screen and (max-width: 575.98px) {
+        .btn{
+            width: 100%;
+            text-align: center;
+        }
+    }
+    @media only screen and (max-width: 480px) {
+        .btn{
+            width: 100%;
+            text-align: center;
+        }
+        &__image-wrapper{
+            margin-top: 24px
+        }
+    }   
+}
+
+.card-room-facilities{
+    @include imageRatio(19, 19, true, contain,'icon');
+    display: grid;
+    grid-template-columns: 250px 250px;
+    gap: 10px ;
+    margin: 30px 0px;
+
+    &__item{
+        display: flex;
+        align-items: center;
+        padding: 4px 0px;
+    }
+
+    &__info{
+        margin: 0px;
+        padding-left: 15px;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 35px;
+        color:$gray-200;
+    }
+
+    @media only screen and (max-width: 1199.98px) {
+        gap: 8px;
+        margin: 24px 0px;
+        &__info{
+            font-size: 18px;
+            line-height: 27px;
+        }
+    
+    }
+
+    @media only screen and (max-width: 767.98px) {
+        gap: 4px;
+        margin: 20px 0px;
+        &__info{
+            font-size: 16px;
+            line-height: 24px;
+        }
+    }
+
+    @media only screen and (max-width: 575.98px) {
+        //grid-template-columns:1fr;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media only screen and (max-width: 480px) {
+        grid-template-columns: 1fr;
+    }
+
+
+}
